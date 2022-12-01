@@ -54,6 +54,7 @@ div.form__search{
 .wp-block-search__inside-wrapper {
     position: relative;
     flex-direction: column;
+    height: 5.6rem !important;
 }
 
 .wp-block-search__input {
@@ -80,7 +81,10 @@ div.form__search{
     margin-top: 4rem;
 }
 
-button.wp-block-search__button{
+button.wp-block-search__button,
+div.wp-block-search__button,
+.wp-block-search__button
+{
     @extend .form__btn;
     @extend .btn;
     @extend .btn--secondary;

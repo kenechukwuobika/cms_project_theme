@@ -3,16 +3,17 @@ img.heading__img {
     width: inherit !important;
 }
 
+figure.wp-block-image.alignfull img{
+    width: inherit;
+    max-width: inherit;
+}
+
 .heading {
     position: relative;
     overflow-x: hidden;
     padding-bottom: 6rem;
 
     &__img {
-        img.heading__img {
-            max-width: inherit;
-            width: inherit;
-        }
 
         &--container {
             position: relative;
@@ -24,6 +25,9 @@ img.heading__img {
         }
     }
 
+    .block-editor-block-list__layout 
+    .block-editor-block-list__block 
+    &__content,
     &__content {
         position: absolute;
         left: 50%;
@@ -50,13 +54,13 @@ img.heading__img {
         margin-bottom: 2rem;
         border-right: 2px solid rgba(255,255,255,.75);
         text-align: center;
-        white-space: pre-line;
+        white-space: pre-line !important;
         overflow: hidden;
         font-size: 4rem;
         transition: all .6s ease-in;
 
         @include respond(md) {
-            white-space: nowrap;
+            white-space: nowrap !important;
         }
 
         @include respond(xl) {

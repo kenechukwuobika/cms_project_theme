@@ -60,11 +60,15 @@ main {
     .form__input {
       margin-bottom: 0; } }
 
-.form__btn, button.wp-block-search__button {
+.form__btn, button.wp-block-search__button,
+div.wp-block-search__button,
+.wp-block-search__button {
   position: relative;
   max-width: 20rem; }
   @media only screen and (min-width: 36em) {
-    .form__btn, button.wp-block-search__button {
+    .form__btn, button.wp-block-search__button,
+    div.wp-block-search__button,
+    .wp-block-search__button {
       max-width: 26rem;
       position: absolute;
       top: 0;
@@ -79,7 +83,8 @@ div.form__search {
 
 .wp-block-search__inside-wrapper {
   position: relative;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 5.6rem !important; }
 
 .wp-block-search__input {
   font-size: 1.6rem;
@@ -102,17 +107,25 @@ div.form__search {
   margin: 0 auto;
   margin-top: 4rem; }
 
-button.wp-block-search__button {
+button.wp-block-search__button,
+div.wp-block-search__button,
+.wp-block-search__button {
   position: relative;
   max-width: 20rem; }
   @media only screen and (min-width: 36em) {
-    button.wp-block-search__button {
+    button.wp-block-search__button,
+    div.wp-block-search__button,
+    .wp-block-search__button {
       max-width: 26rem;
       position: absolute;
       top: 0;
       right: 0; } }
 
-.btn, button.wp-block-search__button, .btn:link, button.wp-block-search__button:link, .btn:visited, button.wp-block-search__button:visited {
+.btn, button.wp-block-search__button,
+div.wp-block-search__button,
+.wp-block-search__button, .btn:link,
+.wp-block-search__button:link, .btn:visited,
+.wp-block-search__button:visited {
   height: 6rem;
   width: 100%;
   font-family: Roboto, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -137,19 +150,27 @@ button.wp-block-search__button {
   transform: translateY(0);
   transition: transform .1s ease-in; }
   @media only screen and (min-width: 48em) {
-    .btn, button.wp-block-search__button, .btn:link, button.wp-block-search__button:link, .btn:visited, button.wp-block-search__button:visited {
+    .btn, button.wp-block-search__button,
+    div.wp-block-search__button,
+    .wp-block-search__button, .btn:link,
+    .wp-block-search__button:link, .btn:visited,
+    .wp-block-search__button:visited {
       font-size: 2.4rem; } }
 
-.btn:hover, button.wp-block-search__button:hover {
+.btn:hover,
+.wp-block-search__button:hover {
   transform: translateY(-0.25rem); }
 
-.btn:active, button.wp-block-search__button:active {
+.btn:active,
+.wp-block-search__button:active {
   transform: translateY(0rem); }
 
 .btn--primary {
   background-color: #512C79; }
 
-.btn--secondary, button.wp-block-search__button {
+.btn--secondary, button.wp-block-search__button,
+div.wp-block-search__button,
+.wp-block-search__button {
   background-color: #5BC698; }
 
 .posts {
@@ -1029,20 +1050,21 @@ img.heading__img {
   max-width: inherit;
   width: inherit !important; }
 
+figure.wp-block-image.alignfull img {
+  width: inherit;
+  max-width: inherit; }
+
 .heading {
   position: relative;
   overflow-x: hidden;
   padding-bottom: 6rem; }
-  .heading__img img.heading__img {
-    max-width: inherit;
-    width: inherit; }
   .heading__img--container {
     position: relative;
     clip-path: ellipse(85% 65% at 50% 32%); }
     @media only screen and (min-width: 120em) {
       .heading__img--container {
         clip-path: ellipse(65% 65% at 50% 32%); } }
-  .heading__content {
+  .block-editor-block-list__layout .block-editor-block-list__block .heading__content, .heading__content {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1057,20 +1079,20 @@ img.heading__img {
     justify-content: center;
     align-items: center; }
     @media only screen and (min-width: 36em) {
-      .heading__content {
+      .block-editor-block-list__layout .block-editor-block-list__block .heading__content, .heading__content {
         top: 40%; } }
   .heading__h1 {
     font-family: Garamond, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 2rem;
     border-right: 2px solid rgba(255, 255, 255, 0.75);
     text-align: center;
-    white-space: pre-line;
+    white-space: pre-line !important;
     overflow: hidden;
     font-size: 4rem;
     transition: all .6s ease-in; }
     @media only screen and (min-width: 36em) {
       .heading__h1 {
-        white-space: nowrap; } }
+        white-space: nowrap !important; } }
     @media only screen and (min-width: 120em) {
       .heading__h1 {
         font-size: 5rem; } }
