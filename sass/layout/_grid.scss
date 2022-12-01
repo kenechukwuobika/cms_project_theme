@@ -1,0 +1,77 @@
+/// Grid
+///
+/// Defines the basic layout of the website
+
+/// Container
+///
+/// Container sets the min-width of the layout to ensure that no element
+/// exceeds the mininum with allowed in that screen size.
+
+.container {
+    flex: 1;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+
+  @include respond(sm){
+    max-width: 48.0rem !important;
+  }
+
+  @include respond(md){
+    max-width: 72rem !important;
+  }
+
+  @include respond(lg){
+    max-width: 140rem !important;
+  }
+
+  @include respond(xl){
+    max-width: 164rem !important;
+  }
+}
+
+.row {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    [class^="col-"] {
+        padding: $gutter-horizontal;
+    }
+
+
+    @for $i from 1 through 12 {
+        @each $size, $unit in $breakpoints {
+
+            &-#{$size}{
+                @extend .row;
+                
+                @include respond($size){
+                    flex-direction: row;
+
+                    & .col-#{$i}{
+                        min-width: 0;
+                        width: 100%;
+                        flex: 0 0 calc( (#{$i}/ 12) * 100%);
+                    }
+                }
+            }
+
+            &-#{$size}-reverse{
+                @extend .row;
+                
+                @include respond($size){
+                    flex-direction: row-reverse;
+
+                    & .col-#{$i}{
+                        min-width: 0;
+                        width: 100%;
+                        flex: 0 0 calc( (#{$i}/ 12) * 100%);
+                    }
+                }
+            }
+        }
+    }
+}

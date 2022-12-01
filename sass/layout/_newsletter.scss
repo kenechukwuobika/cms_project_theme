@@ -1,0 +1,19 @@
+.newsletter {
+    background-color: map-get($colors, 'secondary');
+    padding: 4rem;
+
+    &__h4 {
+        font-size: 3.2rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    &__container {
+        max-width: 80rem;
+        margin:  0 auto;
+    }
+
+    &__form {}
+}
+

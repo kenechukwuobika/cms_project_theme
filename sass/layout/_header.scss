@@ -1,0 +1,93 @@
+img.heading__img {
+    max-width: inherit;
+    width: inherit !important;
+}
+
+.heading {
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 6rem;
+
+    &__img {
+        img.heading__img {
+            max-width: inherit;
+            width: inherit;
+        }
+
+        &--container {
+            position: relative;
+            clip-path: ellipse(85% 65% at 50% 32%);
+
+            @include respond(xl) {
+                clip-path: ellipse(65% 65% at 50% 32%);
+            }
+        }
+    }
+
+    &__content {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 45%;
+        color: map-get($colors, 'background' );
+        max-width: 65.2rem;
+        padding: 0 1rem;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(md) {
+            top: 40%;
+        }
+
+    }
+
+    &__h1 {
+        font-family: $garamond;
+        margin-bottom: 2rem;
+        border-right: 2px solid rgba(255,255,255,.75);
+        text-align: center;
+        white-space: pre-line;
+        overflow: hidden;
+        font-size: 4rem;
+        transition: all .6s ease-in;
+
+        @include respond(md) {
+            white-space: nowrap;
+        }
+
+        @include respond(xl) {
+            font-size: 5rem;
+        }
+        
+        @supports ((-webkit-background-clip: text)) {
+            & {
+                color: transparent;
+                background-image: linear-gradient(to right, map-get($colors, secondary), map-get($colors, tertiary) );
+                -webkit-background-clip: text;
+            }
+        }
+
+        &--container {
+
+            width: 100%;
+
+            @include respond(md) {        
+                max-width: min-content;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 3.2rem;
+        margin-bottom: 6rem;
+    }
+
+    &__btn {
+        width: 24.6rem;
+    }
+
+}

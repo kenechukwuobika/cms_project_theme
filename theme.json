@@ -1,0 +1,97 @@
+{
+    "version":2,
+    "settings": {
+        "appearanceTools": true,
+
+        "color": {
+            "palette": [
+                {
+                    "slug": "foreground",
+                    "color": "#707070",
+                    "name": "Foreground"
+                },
+                {
+                    "slug": "background",
+                    "color": "#ffffff",
+                    "name": "Background"
+                },
+                {
+                    "slug": "primary",
+                    "color": "#512C79",
+                    "name": "Primary"
+                },
+                {
+                    "slug": "secondary",
+                    "color": "#5BC698",
+                    "name": "Secondary"
+                }
+            ]
+        },
+
+        "typography": {
+            "fontSizes": [
+                {
+                    "slug": "small",
+					"size": "1.8rem",
+					"name": "Small"
+                },
+                {
+                    "slug": "medium",
+					"size": "2.4rem",
+					"name": "Medium"
+                },
+                {
+                    "slug": "large",
+					"size": "3.2rem",
+					"name": "Large"
+                },
+                {
+                    "slug": "extra",
+					"size": "5.6rem",
+					"name": "ExtraLarge"
+                }
+            ],
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Garamond\", sans-serif",
+                    "name": "Garamond",
+                    "slug": "garamond"
+                },
+                {
+                    "fontFamily": "\"Roboto\", sans",
+                    "name": "Roboto",
+                    "slug": "roboto"
+                }
+           ],
+           "textTransform": false
+        },
+
+
+        "layout": {
+            "contentSize": "750px",
+            "wideSize": "1000px"
+        },
+
+
+        "custom": {}
+    },
+
+    "styles": {
+        "elements": {
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--extra)"
+                }
+            }
+        },
+
+        "blocks":{
+            "core/heading": {
+                "typography": {
+                    "fontFamily":"var(--wp--preset--font-family--garamond)",
+                    "fontWeight": 700
+                }
+            }
+        }
+    }
+}

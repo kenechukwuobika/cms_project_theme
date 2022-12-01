@@ -1,0 +1,16 @@
+{
+  "name": "kenechukwu_obika_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "complie:sass": "node-sass sass/app.scss style.css",
+    "watch:sass": "node-sass sass/app.scss style.css --w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

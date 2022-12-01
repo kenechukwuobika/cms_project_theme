@@ -1,0 +1,50 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        height: 6rem;
+        width: 100%;
+        font-family: $roboto;
+        text-transform: capitalize;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: map-get($colors, background);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-style: normal;
+        font-size: 1.8rem;
+        font-weight: 700;
+        transform: translateY(0);
+        transition: transform .1s ease-in;
+        transition: color .3s ease-in;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(0);
+        transition: transform .1s ease-in;
+
+        @include respond(lg) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-0.25rem);
+    }
+
+    &:active {
+        transform: translateY(0rem);
+    }
+
+    &--primary {
+        background-color: map-get($colors, "primary");
+    }
+
+    &--secondary {
+        background-color: map-get($colors, "secondary");
+    }
+
+}

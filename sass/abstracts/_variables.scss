@@ -1,0 +1,30 @@
+/// Variables
+///
+/// Here we define our Sass variables.
+
+$gutter-horizontal: 1.5em;
+
+/// Colors
+$colors: (
+  primary: #512C79,
+  secondary: #5BC698,
+  tertiary: #11b2d7,
+  background: #ffffff,
+  foreground: #F2F5F7,
+  grey: #707070
+);
+
+/// Grid and breakpoints
+$breakpoints: (
+  'sm': 24.375em,
+  'md': 36em,
+  'lg': 48em,
+  'xl': 120em
+);
+
+/// Effects
+$cta-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+/// Fonts stack
+$garamond: Garamond, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$roboto: Roboto, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;

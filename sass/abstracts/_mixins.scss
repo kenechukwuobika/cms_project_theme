@@ -1,0 +1,9 @@
+/// Mixins
+///
+/// Set of useful functions used in entire Sass codebase.
+
+@mixin respond($bp) {
+  @media only screen and (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
