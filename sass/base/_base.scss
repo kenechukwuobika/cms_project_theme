@@ -29,6 +29,14 @@ body {
   background-color: map-get($colors, 'background');
 }
 
+body .is-layout-constrained > * + * {
+    margin-block-start: 0 !important;
+}
+
+body .is-layout-flow > * + * {
+    margin-block-start: 0 !important;
+}
+
 main {
     margin-bottom: 8rem;
 }

@@ -8,11 +8,22 @@
     <div class="wp-block-query">
         <!-- wp:post-template -->
             <!-- wp:group { "layout": {"inherit":true} } -->
-                <div class="wp-block-group">
-                    <!-- wp:post-title {"isLink":true} /-->
-                    <!-- wp:post-date /-->
+                <div class="wp-block-group posts__card">
                     <!-- wp:post-featured-image { "align":"wide", "height":"var(--wp--custom--featured-image-height)" } /-->
-                    <!-- wp:post-excerpt {"moreText":"Continue reading"} /-->
+                    
+                    <!-- wp:group { "layout": {"inherit":true} } -->
+                        <div class="wp-block-group posts__content">
+                            <!-- wp:post-title {"isLink":true} /-->
+                            <!-- wp:post-excerpt {"moreText":"Continue reading"} /-->
+
+                            <!-- wp:group -->
+                                <div class="wp-block-group posts__captions">
+                                    <!-- wp:post-date /-->
+                                    <!-- wp:post-author {"showAvatar":false, "byline": "Written by:"} /-->  
+                                </div>
+                            <!-- /wp:group -->
+                        </div>
+                    <!-- /wp:group -->
                 </div>
             <!-- /wp:group -->
         <!-- /wp:post-template -->

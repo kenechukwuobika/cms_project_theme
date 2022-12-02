@@ -8,7 +8,7 @@
 
     &__content {
         padding: 2rem;
-
+        
         @include respond(md) {
             padding: 2rem 4rem;
         }
@@ -24,7 +24,11 @@
         width: 100%;
     }
 
-    &__title {
+    &__title,
+    &__title a:link,
+    &__title a:visited
+    {
+        text-decoration: none;
         color: map-get($colors, "primary");
         font-weight: 800;
         text-align: center;
@@ -41,6 +45,7 @@
         font-size: 1.8rem;
         text-align: center;
         margin-bottom: 2rem;
+        word-break: break-all;
 
         @include respond(md) {
             font-size: 2.4rem;
@@ -53,6 +58,9 @@
         align-items: center;
         margin-bottom: 4rem;
         flex-direction: column;
+        font-size: 1.4rem;
+        font-style: italic;
+        font-weight: 800;
 
         @include respond(md) {
             flex-direction: row;
@@ -60,9 +68,6 @@
         }
 
         &--text {
-            font-size: 1.4rem;
-            font-style: italic;
-            font-weight: 800;
 
             &:not(:last-child) {
                 margin-bottom: 1rem;
@@ -79,7 +84,8 @@
     }
 
     &__btn {
-        max-width: 20.6rem;
+        max-width: 30.6rem;
+        padding: 1rem 4rem;
         margin: 0 auto;
     }
 }
@@ -245,4 +251,82 @@
         font-size: 1.4rem;
         margin-bottom: 1rem;
     }
+}
+
+.wp-block-query {
+    flex: 1;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+
+  @include respond(sm){
+    max-width: 48.0rem !important;
+  }
+
+  @include respond(md){
+    max-width: 72rem !important;
+  }
+
+  @include respond(lg){
+    max-width: 140rem !important;
+  }
+
+  @include respond(xl){
+    max-width: 164rem !important;
+  }
+}
+
+.wp-block-post-template {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @extend .wp-block-post-template;
+                
+    @include respond(lg){
+        flex-direction: row;
+
+        & .wp-block-post{
+            margin-block-start: 0;
+            padding: $gutter-horizontal !important;
+            min-width: 0;
+            width: 100%;
+            flex: 0 0 calc( (6/ 12) * 100%);
+        }
+    }
+}
+
+.wp-block-post-title {
+    @extend .posts__title;
+}
+
+.wp-block-post-excerpt__excerpt {
+    @extend .posts__excerpt
+}
+
+.wp-block-post-excerpt__more-text {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.wp-block-post-excerpt__more-link {
+    @extend .btn, .btn--primary, .posts__btn;
+    margin-bottom: 4rem !important;
+}
+
+.wp-post-image {
+    border-top-left-radius: 1.4rem;
+    border-top-right-radius: 1.4rem;
+}
+
+.wp-block-post-author__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-block-post-author__byline {
+    margin-right: 1rem;
 }

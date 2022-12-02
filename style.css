@@ -33,6 +33,12 @@ body {
   overflow-x: hidden;
   background-color: #ffffff; }
 
+body .is-layout-constrained > * + * {
+  margin-block-start: 0 !important; }
+
+body .is-layout-flow > * + * {
+  margin-block-start: 0 !important; }
+
 main {
   margin-bottom: 8rem; }
 
@@ -123,9 +129,9 @@ div.wp-block-search__button,
 
 .btn, button.wp-block-search__button,
 div.wp-block-search__button,
-.wp-block-search__button, .btn:link,
-.wp-block-search__button:link, .btn:visited,
-.wp-block-search__button:visited {
+.wp-block-search__button, .wp-block-post-excerpt__more-link, .btn:link,
+.wp-block-search__button:link, .wp-block-post-excerpt__more-link:link, .btn:visited,
+.wp-block-search__button:visited, .wp-block-post-excerpt__more-link:visited {
   height: 6rem;
   width: 100%;
   font-family: Roboto, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -152,20 +158,20 @@ div.wp-block-search__button,
   @media only screen and (min-width: 48em) {
     .btn, button.wp-block-search__button,
     div.wp-block-search__button,
-    .wp-block-search__button, .btn:link,
-    .wp-block-search__button:link, .btn:visited,
-    .wp-block-search__button:visited {
+    .wp-block-search__button, .wp-block-post-excerpt__more-link, .btn:link,
+    .wp-block-search__button:link, .wp-block-post-excerpt__more-link:link, .btn:visited,
+    .wp-block-search__button:visited, .wp-block-post-excerpt__more-link:visited {
       font-size: 2.4rem; } }
 
 .btn:hover,
-.wp-block-search__button:hover {
+.wp-block-search__button:hover, .wp-block-post-excerpt__more-link:hover {
   transform: translateY(-0.25rem); }
 
 .btn:active,
-.wp-block-search__button:active {
+.wp-block-search__button:active, .wp-block-post-excerpt__more-link:active {
   transform: translateY(0rem); }
 
-.btn--primary {
+.btn--primary, .wp-block-post-excerpt__more-link {
   background-color: #512C79; }
 
 .btn--secondary, button.wp-block-search__button,
@@ -190,46 +196,56 @@ div.wp-block-search__button,
     flex: 1; }
   .posts__img {
     width: 100%; }
-  .posts__title {
+  .posts__title, .wp-block-post-title,
+  .posts__title a:link,
+  .wp-block-post-title a:link,
+  .posts__title a:visited,
+  .wp-block-post-title a:visited {
+    text-decoration: none;
     color: #512C79;
     font-weight: 800;
     text-align: center;
     font-size: 2.4rem;
     margin-bottom: 4rem; }
     @media only screen and (min-width: 36em) {
-      .posts__title {
+      .posts__title, .wp-block-post-title,
+      .posts__title a:link,
+      .wp-block-post-title a:link,
+      .posts__title a:visited,
+      .wp-block-post-title a:visited {
         font-size: 3.2rem; } }
-  .posts__excerpt {
+  .posts__excerpt, .wp-block-post-excerpt__excerpt {
     font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    word-break: break-all; }
     @media only screen and (min-width: 36em) {
-      .posts__excerpt {
+      .posts__excerpt, .wp-block-post-excerpt__excerpt {
         font-size: 2.4rem; } }
   .posts__captions {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
-    flex-direction: column; }
+    flex-direction: column;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 800; }
     @media only screen and (min-width: 36em) {
       .posts__captions {
         flex-direction: row;
         justify-content: space-between; } }
-    .posts__captions--text {
-      font-size: 1.4rem;
-      font-style: italic;
-      font-weight: 800; }
-      .posts__captions--text:not(:last-child) {
-        margin-bottom: 1rem; }
-        @media only screen and (min-width: 36em) {
-          .posts__captions--text:not(:last-child) {
-            margin-bottom: 0; } }
+    .posts__captions--text:not(:last-child) {
+      margin-bottom: 1rem; }
       @media only screen and (min-width: 36em) {
-        .posts__captions--text {
-          font-size: 1.8rem; } }
-  .posts__btn {
-    max-width: 20.6rem;
+        .posts__captions--text:not(:last-child) {
+          margin-bottom: 0; } }
+    @media only screen and (min-width: 36em) {
+      .posts__captions--text {
+        font-size: 1.8rem; } }
+  .posts__btn, .wp-block-post-excerpt__more-link {
+    max-width: 30.6rem;
+    padding: 1rem 4rem;
     margin: 0 auto; }
 
 .article {
@@ -347,6 +363,59 @@ div.wp-block-search__button,
   font-size: 1.4rem;
   margin-bottom: 1rem; }
 
+.wp-block-query {
+  flex: 1;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%; }
+  @media only screen and (min-width: 24.375em) {
+    .wp-block-query {
+      max-width: 48.0rem !important; } }
+  @media only screen and (min-width: 36em) {
+    .wp-block-query {
+      max-width: 72rem !important; } }
+  @media only screen and (min-width: 48em) {
+    .wp-block-query {
+      max-width: 140rem !important; } }
+  @media only screen and (min-width: 120em) {
+    .wp-block-query {
+      max-width: 164rem !important; } }
+
+.wp-block-post-template {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  @media only screen and (min-width: 48em) {
+    .wp-block-post-template {
+      flex-direction: row; }
+      .wp-block-post-template .wp-block-post {
+        margin-block-start: 0;
+        padding: 1.5rem !important;
+        min-width: 0;
+        width: 100%;
+        flex: 0 0 calc( (6/ 12) * 100%); } }
+
+.wp-block-post-excerpt__more-text {
+  text-align: center;
+  font-size: 1.4rem; }
+
+.wp-block-post-excerpt__more-link {
+  margin-bottom: 4rem !important; }
+
+.wp-post-image {
+  border-top-left-radius: 1.4rem;
+  border-top-right-radius: 1.4rem; }
+
+.wp-block-post-author__content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.wp-block-post-author__byline {
+  margin-right: 1rem; }
+
 .container {
   flex: 1;
   padding: 0;
@@ -372,7 +441,7 @@ div.wp-block-search__button,
   flex-direction: column;
   flex-wrap: wrap; }
   .row [class^="col-"], .row-sm [class^="col-"], .row-sm-reverse [class^="col-"], .row-md [class^="col-"], .row-md-reverse [class^="col-"], .row-lg [class^="col-"], .row-lg-reverse [class^="col-"], .row-xl [class^="col-"], .row-xl-reverse [class^="col-"] {
-    padding: 1.5em; }
+    padding: 1.5rem; }
   @media only screen and (min-width: 24.375em) {
     .row-sm {
       flex-direction: row; }
