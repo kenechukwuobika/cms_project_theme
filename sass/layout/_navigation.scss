@@ -1,0 +1,43 @@
+
+.nav__logo {
+    display: none;
+
+    @include respond(md) {
+        display: block;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        width: 15rem;
+    }
+
+    @include respond(lg) {
+        margin-left: 15rem;
+    }
+}
+
+.wp-block-navigation__responsive-dialog {
+    
+    @include respond(md) {
+        position: absolute;
+        color: white;
+        right: 0;
+        font-size: 3rem;
+        padding: 2rem;
+        z-index: 1;
+    }
+
+    @include respond(lg) {
+        padding: 2rem 8rem;
+    }
+}
+
+.wp-block-navigation-item__content {
+    font-size: 2.4rem;
+    cursor: pointer;
+
+    &:hover {
+        text-shadow: $text-shadow;
+    }
+}

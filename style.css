@@ -39,6 +39,9 @@ body .is-layout-constrained > * + * {
 body .is-layout-flow > * + * {
   margin-block-start: 0 !important; }
 
+.wp-site-blocks > * + * {
+  margin-block-start: 0 !important; }
+
 main {
   margin-bottom: 8rem; }
 
@@ -81,6 +84,7 @@ div.wp-block-search__button,
       right: 0; } }
 
 div.form__search {
+  margin-top: 4rem !important;
   max-width: 81.1rem;
   width: 100%;
   height: 8.6rem;
@@ -92,19 +96,22 @@ div.form__search {
   flex-direction: column;
   height: 5.6rem !important; }
 
-.wp-block-search__input {
+.wp-block-search__input,
+input.wp-block-search__input {
   font-size: 1.6rem;
   border-radius: 5rem;
   width: 100%;
-  padding: 0 4rem;
+  padding: 2rem 4rem;
   height: 5.6rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   outline: none;
   border: none;
   margin-bottom: 2rem; }
   @media only screen and (min-width: 36em) {
-    .wp-block-search__input {
-      margin-bottom: 0; } }
+    .wp-block-search__input,
+    input.wp-block-search__input {
+      margin-bottom: 0;
+      padding: 0 4rem; } }
 
 .wp-block-search {
   max-width: 81.1rem;
@@ -387,12 +394,13 @@ div.wp-block-search__button,
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; }
+  .wp-block-post-template .wp-block-post {
+    padding: 1.5rem !important; }
   @media only screen and (min-width: 48em) {
     .wp-block-post-template {
       flex-direction: row; }
       .wp-block-post-template .wp-block-post {
         margin-block-start: 0;
-        padding: 1.5rem !important;
         min-width: 0;
         width: 100%;
         flex: 0 0 calc( (6/ 12) * 100%); } }
@@ -1151,20 +1159,15 @@ figure.wp-block-image.alignfull img {
       .block-editor-block-list__layout .block-editor-block-list__block .heading__content, .heading__content {
         top: 40%; } }
   .heading__h1 {
-    font-family: Garamond, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 2rem;
     border-right: 2px solid rgba(255, 255, 255, 0.75);
     text-align: center;
     white-space: pre-line !important;
     overflow: hidden;
-    font-size: 4rem;
     transition: all .6s ease-in; }
     @media only screen and (min-width: 36em) {
       .heading__h1 {
         white-space: nowrap !important; } }
-    @media only screen and (min-width: 120em) {
-      .heading__h1 {
-        font-size: 5rem; } }
     @supports (-webkit-background-clip: text) {
       .heading__h1 {
         color: transparent;
@@ -1194,7 +1197,7 @@ figure.wp-block-image.alignfull img {
   @media only screen and (min-width: 36em) {
     .footer {
       padding: 10rem 0; } }
-  .footer__logo {
+  .footer__logo > img {
     max-width: 20rem;
     width: 100%;
     height: auto;
@@ -1203,7 +1206,9 @@ figure.wp-block-image.alignfull img {
     font-size: 1.8rem;
     max-width: 60rem;
     text-align: center;
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem !important; }
+  .footer__caption {
+    font-size: 1.4rem; }
 
 .newsletter {
   background-color: #5BC698;
@@ -1216,3 +1221,37 @@ figure.wp-block-image.alignfull img {
   .newsletter__container {
     max-width: 80rem;
     margin: 0 auto; }
+
+.nav__logo {
+  display: none; }
+  @media only screen and (min-width: 36em) {
+    .nav__logo {
+      display: block;
+      margin-top: 2rem;
+      margin-left: 2rem;
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      width: 15rem; } }
+  @media only screen and (min-width: 48em) {
+    .nav__logo {
+      margin-left: 15rem; } }
+
+@media only screen and (min-width: 36em) {
+  .wp-block-navigation__responsive-dialog {
+    position: absolute;
+    color: white;
+    right: 0;
+    font-size: 3rem;
+    padding: 2rem;
+    z-index: 1; } }
+
+@media only screen and (min-width: 48em) {
+  .wp-block-navigation__responsive-dialog {
+    padding: 2rem 8rem; } }
+
+.wp-block-navigation-item__content {
+  font-size: 2.4rem;
+  cursor: pointer; }
+  .wp-block-navigation-item__content:hover {
+    text-shadow: 5px 3.25px 3px black; }

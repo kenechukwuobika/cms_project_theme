@@ -44,6 +44,7 @@
 }
 
 div.form__search{
+    margin-top: 4rem !important;
     max-width: 81.1rem;
     width: 100%;
     height: 8.6rem;
@@ -57,11 +58,12 @@ div.form__search{
     height: 5.6rem !important;
 }
 
-.wp-block-search__input {
+.wp-block-search__input,
+input.wp-block-search__input {
     font-size: 1.6rem;
     border-radius: 5rem;
     width: 100%;
-    padding: 0 4rem;
+    padding: 2rem 4rem;
     height: 5.6rem;
     box-shadow: $cta-shadow;
     outline: none;
@@ -70,6 +72,7 @@ div.form__search{
 
     @include respond(md) {
         margin-bottom: 0;
+        padding: 0 4rem;
     }
 }
 

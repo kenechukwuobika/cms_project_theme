@@ -283,14 +283,15 @@
     flex-direction: column;
     flex-wrap: wrap;
 
-    @extend .wp-block-post-template;
+    & .wp-block-post{
+        padding: $gutter-horizontal !important;
+    }
                 
     @include respond(lg){
         flex-direction: row;
 
         & .wp-block-post{
             margin-block-start: 0;
-            padding: $gutter-horizontal !important;
             min-width: 0;
             width: 100%;
             flex: 0 0 calc( (6/ 12) * 100%);
