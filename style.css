@@ -136,9 +136,9 @@ div.wp-block-search__button,
 
 .btn, button.wp-block-search__button,
 div.wp-block-search__button,
-.wp-block-search__button, .wp-block-post-excerpt__more-link, .btn:link,
-.wp-block-search__button:link, .wp-block-post-excerpt__more-link:link, .btn:visited,
-.wp-block-search__button:visited, .wp-block-post-excerpt__more-link:visited {
+.wp-block-search__button, .posts .wp-block-post-excerpt__more-link, .btn:link,
+.wp-block-search__button:link, .posts .wp-block-post-excerpt__more-link:link, .btn:visited,
+.wp-block-search__button:visited, .posts .wp-block-post-excerpt__more-link:visited {
   height: 6rem;
   width: 100%;
   font-family: Roboto, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -165,20 +165,20 @@ div.wp-block-search__button,
   @media only screen and (min-width: 48em) {
     .btn, button.wp-block-search__button,
     div.wp-block-search__button,
-    .wp-block-search__button, .wp-block-post-excerpt__more-link, .btn:link,
-    .wp-block-search__button:link, .wp-block-post-excerpt__more-link:link, .btn:visited,
-    .wp-block-search__button:visited, .wp-block-post-excerpt__more-link:visited {
+    .wp-block-search__button, .posts .wp-block-post-excerpt__more-link, .btn:link,
+    .wp-block-search__button:link, .posts .wp-block-post-excerpt__more-link:link, .btn:visited,
+    .wp-block-search__button:visited, .posts .wp-block-post-excerpt__more-link:visited {
       font-size: 2.4rem; } }
 
 .btn:hover,
-.wp-block-search__button:hover, .wp-block-post-excerpt__more-link:hover {
+.wp-block-search__button:hover, .posts .wp-block-post-excerpt__more-link:hover {
   transform: translateY(-0.25rem); }
 
 .btn:active,
-.wp-block-search__button:active, .wp-block-post-excerpt__more-link:active {
+.wp-block-search__button:active, .posts .wp-block-post-excerpt__more-link:active {
   transform: translateY(0rem); }
 
-.btn--primary, .wp-block-post-excerpt__more-link {
+.btn--primary, .posts .wp-block-post-excerpt__more-link {
   background-color: #512C79; }
 
 .btn--secondary, button.wp-block-search__button,
@@ -203,31 +203,31 @@ div.wp-block-search__button,
     flex: 1; }
   .posts__img {
     width: 100%; }
-  .posts__title, .wp-block-post-title,
+  .posts__title, .posts .wp-block-post-title,
   .posts__title a:link,
-  .wp-block-post-title a:link,
+  .posts .wp-block-post-title a:link,
   .posts__title a:visited,
-  .wp-block-post-title a:visited {
+  .posts .wp-block-post-title a:visited {
     text-decoration: none;
     color: #512C79;
     font-weight: 800;
     text-align: center;
     font-size: 2.4rem;
-    margin-bottom: 4rem; }
+    margin-bottom: 2rem; }
     @media only screen and (min-width: 36em) {
-      .posts__title, .wp-block-post-title,
+      .posts__title, .posts .wp-block-post-title,
       .posts__title a:link,
-      .wp-block-post-title a:link,
+      .posts .wp-block-post-title a:link,
       .posts__title a:visited,
-      .wp-block-post-title a:visited {
+      .posts .wp-block-post-title a:visited {
         font-size: 3.2rem; } }
-  .posts__excerpt, .wp-block-post-excerpt__excerpt {
+  .posts__excerpt, .posts .wp-block-post-excerpt__excerpt {
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 2rem;
     word-break: break-all; }
     @media only screen and (min-width: 36em) {
-      .posts__excerpt, .wp-block-post-excerpt__excerpt {
+      .posts__excerpt, .posts .wp-block-post-excerpt__excerpt {
         font-size: 2.4rem; } }
   .posts__captions {
     display: flex;
@@ -250,7 +250,7 @@ div.wp-block-search__button,
     @media only screen and (min-width: 36em) {
       .posts__captions--text {
         font-size: 1.8rem; } }
-  .posts__btn, .wp-block-post-excerpt__more-link {
+  .posts__btn, .posts .wp-block-post-excerpt__more-link {
     max-width: 30.6rem;
     padding: 1rem 4rem;
     margin: 0 auto; }
@@ -264,6 +264,7 @@ div.wp-block-search__button,
       position: relative;
       top: 0;
       margin-top: -22rem;
+      margin-block-start: -22rem !important;
       left: 0;
       transform: translate(0, 0); } }
   .article__card {
@@ -275,12 +276,12 @@ div.wp-block-search__button,
     border-radius: 1rem;
     padding: 4rem;
     position: relative; }
-  .article__h1 {
+  .article__h1, .article .wp-block-post-title {
     font-size: 3.2rem;
     padding: 2rem 0;
     font-family: Garamond, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; }
     @media only screen and (min-width: 36em) {
-      .article__h1 {
+      .article__h1, .article .wp-block-post-title {
         font-size: 6.4rem; } }
   .article__h4 {
     font-size: 1.8rem;
@@ -370,59 +371,72 @@ div.wp-block-search__button,
   font-size: 1.4rem;
   margin-bottom: 1rem; }
 
-.wp-block-query {
+.posts .wp-block-query {
   flex: 1;
   padding: 0;
   margin: 0 auto;
   width: 100%; }
   @media only screen and (min-width: 24.375em) {
-    .wp-block-query {
+    .posts .wp-block-query {
       max-width: 48.0rem !important; } }
   @media only screen and (min-width: 36em) {
-    .wp-block-query {
+    .posts .wp-block-query {
       max-width: 72rem !important; } }
   @media only screen and (min-width: 48em) {
-    .wp-block-query {
+    .posts .wp-block-query {
       max-width: 140rem !important; } }
   @media only screen and (min-width: 120em) {
-    .wp-block-query {
+    .posts .wp-block-query {
       max-width: 164rem !important; } }
 
-.wp-block-post-template {
+.posts .wp-block-post-template {
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; }
-  .wp-block-post-template .wp-block-post {
+  .posts .wp-block-post-template .wp-block-post {
     padding: 1.5rem !important; }
   @media only screen and (min-width: 48em) {
-    .wp-block-post-template {
+    .posts .wp-block-post-template {
       flex-direction: row; }
-      .wp-block-post-template .wp-block-post {
+      .posts .wp-block-post-template .wp-block-post {
         margin-block-start: 0;
         min-width: 0;
         width: 100%;
         flex: 0 0 calc( (6/ 12) * 100%); } }
 
-.wp-block-post-excerpt__more-text {
+.posts .wp-block-post-excerpt__more-text {
   text-align: center;
   font-size: 1.4rem; }
 
-.wp-block-post-excerpt__more-link {
+.posts .wp-block-post-excerpt__more-link {
   margin-bottom: 4rem !important; }
 
-.wp-post-image {
+.posts .wp-post-image {
   border-top-left-radius: 1.4rem;
   border-top-right-radius: 1.4rem; }
 
-.wp-block-post-author__content {
+.posts .wp-block-post-author__content {
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.wp-block-post-author__byline {
+.posts .wp-block-post-author__byline {
   margin-right: 1rem; }
+
+.article .wp-block-post-terms {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; }
+  .article .wp-block-post-terms > * {
+    font-size: 2.4rem; }
+
+.wp-block-post-excerpt__excerpt {
+  font-size: 1.8rem;
+  line-height: 150%;
+  padding: 4rem 0; }
 
 .container {
   flex: 1;

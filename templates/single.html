@@ -1,31 +1,54 @@
+<!-- wp:template-part {"slug":"navigation","tagName":"navigation"} /-->
+
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group { "layout": {"inherit":true} } -->
-    <div class="wp-block-group">
-        <!-- wp:post-title {"level":2} /-->
-        <!-- wp:post-date {"format":"F j, Y"} /-->
-        <!-- wp:post-featured-image { "align":"wide", "height":"var(--wp--custom--featured-image-height)" } /-->
-        <!-- wp:post-author {"showAvatar":false, "byline": "Written by:"} /-->
-        <!-- wp:post-content /-->
-
-        <!-- wp:heading -->
-            <h3>Category</h3>
-        <!-- /wp:heading -->
-
+    <div class="wp-block-group article">
+        
         <!-- wp:group -->
-            <div class="wp-block-group">
-                <!-- wp:post-terms {"term":"category"} /-->
+            <div class="wp-block-group article__card">
+                
+                <!-- wp:post-title /-->
+                
+                <!-- wp:group -->
+                    <div class="wp-block-group article__group">
+                        <!-- wp:paragraph -->
+                            <p class="article__h4">Categories</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:post-terms {"term":"category"} /-->
+
+                    </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group -->
+                <div class="wp-block-group article__group">
+                    <!-- wp:paragraph -->
+                        <p class="article__h4">Tags</p>
+                    <!-- /wp:paragraph -->
+
+                    <!-- wp:post-terms {"term":"post_tag"} /-->
+                    
+                </div>
+            <!-- /wp:group -->
+
             </div>
         <!-- /wp:group -->
 
-        <!-- wp:heading -->
-        <h3>Tags</h3>
-        <!-- /wp:heading -->
+        <!-- wp:post-excerpt { "layout": {"inherit":true} /-->
 
         <!-- wp:group -->
-            <div class="wp-block-group">
-                <!-- wp:post-terms {"term":"post_tag"} /-->
-        </div>
+            <div class="wp-block-group article__footer">
+                                    
+                <!-- wp:group -->
+                    <div class="wp-block-group article__card">
+
+                        <!-- wp:post-author { "byline": "Written by:" } /-->
+
+                    </div>
+                <!-- /wp:group -->
+
+            </div>
         <!-- /wp:group -->
 
     </div>
